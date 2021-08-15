@@ -1,0 +1,124 @@
+ALGORITHM distinct
+VAR
+    n,j,i,c:INTEGER;
+    tab1,tab2 : ARRAY_OF INTEGER[n];
+    d:STRING;
+BEGIN
+    c,i:=0;
+    d:="";
+
+    REPEAT
+        write ("Entrez la taille du tableau");
+        read (n);
+
+
+    UNTIL (n>0)
+    FOR i FROM 0 TO n-1 STEP step  DO
+        FOR j FROM 0 TO n STEP step  DO
+            if tab1[i]=tab2[j] then {
+                c:=c+tab1[i];
+                d:= d +","+ tab1[i];
+            }
+
+        END_FOR
+    END_FOR
+
+    write("la somme d'element ",c,"l'element distinct est", d);
+END
+
+
+sol2 :
+
+ALGORITHM distinct
+VAR
+    n,j,i,c:INTEGER;
+    tab1,tab2 : HASH_TABLE<integer,STRING>
+    d:STRING;
+BEGIN
+    c,i:=0;
+    d:="";
+
+    REPEAT
+        write ("Entrez la taille du tableau");
+        read (n);
+
+
+    UNTIL (n>0)
+    FOR i FROM 0 TO n-1 STEP step  DO
+        FOR j FROM 0 TO n STEP step  DO
+            if tab1.lookup[i]=tab2.lookup[j] then {
+                c:=c+tab1.get[i];
+                d:= d +"," +tab1.get[i];
+            }
+
+        END_FOR
+    END_FOR
+
+    write("la somme d'element ",c,"l'element distinct est", d);
+END
+
+
+2eme prob:
+
+
+
+ALGORITHM distinct2
+VAR
+    n,j,i,c:INTEGER;
+    tab1,tab2 : ARRAY_OF INTEGER[n];
+    d:STRING;
+BEGIN
+    c,i:=0;
+    d:="";
+
+    REPEAT
+        write ("Entrez la taille du tableau");
+        read (n);
+
+
+    UNTIL (n>0)
+    FOR i FROM 0 TO n STEP step  DO
+        FOR j FROM 0 TO n STEP step  DO
+            if tab1[i]=tab2[j] then {
+                c:=c+tab1[i]+tab[j];
+                d:= d +"," +tab1[i];
+            }
+
+        END_FOR
+    END_FOR
+
+    write("la somme d'element ",c,"l'element distinct est", d);
+END
+
+
+2eme sol :
+ALGORITHM distinct2
+VAR
+    n,j,i,c:INTEGER;
+    tab1,tab2 : HASH_TABLE<integer,STRING>
+    d:STRING;
+BEGIN
+    c,i:=0;
+    d:="";
+
+    REPEAT
+        write ("Entrez la taille du tableau");
+        read (n);
+
+
+    UNTIL (n>0)
+    
+    FOR i FROM 0 TO n-1 STEP step  DO
+        FOR j FROM 0 TO n STEP step  DO
+            if tab1.lookup[i]=tab2.lookup[j] then {
+                c:=c+tab1.get[i]+tab2.get[j];
+                d:= d +"," +tab1.get[i];
+            }
+
+        END_FOR
+    END_FOR
+
+    write("la somme d'element ",c,"l'element distinct est", d);
+END
+
+
